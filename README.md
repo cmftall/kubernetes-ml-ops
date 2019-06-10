@@ -96,10 +96,10 @@ Where `kubectl` is the standard Command Line Interface (CLI) client for interact
 To launch our test model scoring service on Kubernetes, start by running the container within a Kubernetes [pod](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/) that is managed by a [replication controller](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/), which is the device that ensures that at least one pod running our service is operational at any given time. This is achieved with, 
 
 ```bash
-kubectl run test-ml-score-api --image=alexioannides/test-ml-score-api:latest --port=5000 --generator=run/v1
+kubectl run test-ml-score-api --image=alexioannides/test-ml-score-api:latest --port=5000 --generator=run-pod/v1
 ```
 
-Where the `--generator=run/v1` flag triggers the construction of the replication controller to manage the pod. To check that it's running use,
+Where the `--generator=run-pod/v1` flag triggers the construction of the replication controller to manage the pod. To check that it's running use,
 
 ```bash
 kubectl get pods
